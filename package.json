@@ -20,5 +20,14 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BobLynn/nodejs-test.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BobLynn/nodejs-test/issues"
+  },
+  "homepage": "https://github.com/BobLynn/nodejs-test#readme",
+  "devDependencies": {}
 }
