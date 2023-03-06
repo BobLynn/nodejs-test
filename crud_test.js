@@ -2,7 +2,7 @@ const exp = require("constants")
 const http = require("http")    //http原生模組
 const sqlite3 = require('sqlite3')  //SQLite
 const port_1 = 3000
-const port_2 = 8787
+const port_2 = 8000
 
 const sql_server = http.createServer(function(req, res){
 console.log(req.method)
@@ -34,7 +34,7 @@ else if(req.url == '/property-content' && req.method == 'DELETE'){
 })
 
     sql_server.listen(port_2)
-    console.log('Server is running at http://localhost:8787/ \n')
+    console.log('Server is running at http://localhost:8000/ \n')
 
 
 // const HTTP_test = http.createServer(function (req, res){    //request & respond
