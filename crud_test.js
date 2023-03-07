@@ -3,7 +3,6 @@ const http = require("http")    //http原生模組
 const sqlite3 = require('sqlite3')  //SQLite
 const utf8 = require("utf8")
 
-const port_1 = 3000
 const port_2 = 8000
 
 const sql_server = http.createServer(function(req, res){
