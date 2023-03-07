@@ -12,11 +12,12 @@
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
     "morgan": "~1.9.1",
-    "sqlite3": "^5.1.4"
+    "sqlite3": "^5.1.4",
+    "utf8": "^3.0.0",
+    "ws": "^8.12.1"
   },
   "description": "",
   "main": "app.js",
-  "devDependencies": {},
   "keywords": [],
   "author": "",
   "license": "ISC"
