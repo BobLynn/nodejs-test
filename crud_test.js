@@ -14,7 +14,7 @@ if(req.url == '/'){
 //GET: 從API取得資料
 else if(req.url == '/property-content' && req.method == 'GET'){
     res.writeHead(200, {'Content-Type': 'application/json'})
-    res.end("{'property name': 'PC Monitor', 'serial number': '3101010-123456567', 'professor': 'Shih-An, Lee'}")
+    res.end("{'property name': 'PC Monitor', 'serial number': '3101010-1234567', 'professor': 'Shih-An, Lee'}")
 }
 //POST: 傳送資料以建立資料庫的資料
 else if(req.url == '/property-content' && req.method == 'POST'){
@@ -33,5 +33,6 @@ else if(req.url == '/property-content' && req.method == 'DELETE'){
 }
 })
 
+//監聽：http://localhost:8000/
     sql_server.listen(port_2)
     console.log('Server is running at http://localhost:8000/ \n')

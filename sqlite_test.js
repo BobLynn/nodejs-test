@@ -12,7 +12,8 @@ const db = new sqlite3.Database("./mike.db", sqlite3.OPEN_READWRITE, function (e
         return console.error(err.message)
     }
 
-    console.log("database successfully connected!")                 //console.log 顯示內容（形如printf）
+    console.log("database successfully connected!")
+    //console.log 顯示內容（形如printf）
 })
 
 db.serialize(function(){
@@ -31,7 +32,7 @@ db.serialize(function(){
 
     sql = "INSERT INTO users (property_name, property_SN, property_professor) VALUES(?,?,?)"
     db.run(
-        sql, ['PC Monitor', '3101010-123456567', 'Shih-An, Lee'], (err) => {
+        sql, ['PC Monitor', '3101010-1234567', 'Shih-An, Lee'], (err) => {
         if (err) {
             return console.error(err.message)
         }
@@ -40,7 +41,7 @@ db.serialize(function(){
     })
 
     sql = "INSERT INTO users (property_name, property_SN, property_professor) VALUES(?,?,?)"
-    db.run(sql, ['iPhone', '3101010-9876543', 'Liu'], (err) => {
+    db.run(sql, ['iPhone', '3101010-9876543', 'Chih-Cheng, Liu'], (err) => {
         if (err) {
             return console.error(err.message)
         }
@@ -52,7 +53,7 @@ db.serialize(function(){
 //PHASE 5: update data
 
     sql = 'UPDATE users SET property_name = ? WHERE id = ?'
-    db.run(sql, ['NUC', 2], (err) =>{
+    db.run(sql, ['Intel NUC', 2], (err) =>{
         if (err) {
             return console.error(err.message)
         }
