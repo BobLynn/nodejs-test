@@ -32,7 +32,7 @@ db.serialize(function(){
 
     sql = "INSERT INTO users (property_name, property_SN, property_professor) VALUES(?,?,?)"
     db.run(
-        sql, ['PC Monitor', '3101010-1234567', 'Shih-An, Lee'], (err) => {
+        sql, ['PC Monitor', '3101010-1234567', 'Shih-An, Lee'], function (err) {
         if (err) {
             return console.error(err.message)
         }
