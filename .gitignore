@@ -1,0 +1,4 @@
+# 檔案名稱 .gitignore
+
+# 忽略 package.json 檔案
+package.json
