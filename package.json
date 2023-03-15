@@ -72,6 +72,7 @@
     "http-cache-semantics": "^4.1.1",
     "http-errors": "^1.6.3",
     "http-proxy-agent": "^4.0.1",
+    "http-server": "^14.1.1",
     "https-proxy-agent": "^5.0.1",
     "humanize-ms": "^1.2.1",
     "iconv-lite": "^0.4.23",
