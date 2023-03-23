@@ -1,7 +1,7 @@
 {
   "name": "nodejs-test",
   "version": "1.0.0",
-  "description": "",
+  "description": "目前已使用之套件：npm, sqlite3, express, utf8, websocket",
   "main": "app.js",
   "dependencies": {
     "abbrev": "^1.1.1",
@@ -193,5 +193,6 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {}
 }
