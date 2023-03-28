@@ -194,5 +194,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {}
+  "devDependencies": {
+    "coffeescript": "^2.7.0"
+  }
 }
