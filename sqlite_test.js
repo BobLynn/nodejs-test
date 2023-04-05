@@ -5,9 +5,10 @@ const sqlite3 = require("sqlite3").verbose()
 
 let sql
 
-//PHASE 1: connect to the database
-const db = new sqlite3.Database("./mike.db", sqlite3.OPEN_READWRITE, function (err) {     
-    //Database: 初始化資料庫，對象「mike.db」；確定讀寫模式：READWRITE => 可讀可寫
+//PHASE 1: 與資料庫連線
+
+const db = new sqlite3.Database("./property_table.db", sqlite3.OPEN_READWRITE, function (err) {     
+    //Database: 初始化資料庫，對象「property_table」；確定讀寫模式：READWRITE => 可讀可寫
     if(err) {
         return console.error(err.message)
     }
@@ -18,17 +19,17 @@ const db = new sqlite3.Database("./mike.db", sqlite3.OPEN_READWRITE, function (e
 
 db.serialize(function(){
     
-//PHASE 2: create the table
+//PHASE 2: 新增表格
 
     db.run(
         'CREATE TABLE users(id INTEGER PRIMARY KEY, property_name, property_SN, property_professor)'
     )
 
-//PHASE 3: drop the table
+//PHASE 3: 刪除(drop)表格
 
     db.run("DROP TABLE users")
 
-//PHASE 4: insert data
+//PHASE 4: 匯入(insert)資料
 
     sql = "INSERT INTO users (property_name, property_SN, property_professor) VALUES(?,?,?)"
     db.run(
@@ -40,17 +41,17 @@ db.serialize(function(){
         console.log('inserted data: ', this)
     })
 
-    sql = "INSERT INTO users (property_name, property_SN, property_professor) VALUES(?,?,?)"
-    db.run(sql, ['iPhone', '3101010-9876543', 'Chih-Cheng, Liu'], (err) => {
-        if (err) {
-            return console.error(err.message)
-        }
+    // sql = "INSERT INTO users (property_name, property_SN, property_professor) VALUES(?,?,?)"
+    // db.run(sql, ['iPhone', '3101010-9876543', 'Chih-Cheng, Liu'], (err) => {
+    //     if (err) {
+    //         return console.error(err.message)
+    //     }
 
-        console.log('inserted data:', this)
-    })
+    //     console.log('inserted data:', this)
+    // })
 
 
-//PHASE 5: update data
+//PHASE 5: 更新(update)資料
 
     sql = 'UPDATE users SET property_name = ? WHERE id = ?'
     db.run(sql, ['Intel NUC', 2], (err) =>{
@@ -61,7 +62,7 @@ db.serialize(function(){
         console.log('updated data: ',this)
     })
 
-//PHASE 6: detele data
+//PHASE 6: 刪除(delete)資料
 
     sql = "DELETE FROM users WHERE id = ?"
     db.run(sql, [1], (err) =>{
@@ -72,7 +73,7 @@ db.serialize(function(){
         console.log("deleted data: ",this)
     })
 
-//PHASE 7: querying from the database
+//PHASE 7: 從資料庫查詢(query)
 
     sql = "SELECT * FROM users"
 
@@ -80,14 +81,14 @@ db.serialize(function(){
         if (err) {
             return console.error('find error: ', err.message)
         }
-
+        
         rows.forEach((row) => {
             console.log("found: ", row)
         })
     })
 })
 
-//ENDING PHASE: close the databse
+//ENDING PHASE: 關閉(close)資料庫
 
 db.close(err=> {
     if (err) {

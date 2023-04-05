@@ -11,12 +11,12 @@ const sql_server = http.createServer(function(req, res){
     console.log(req.method)     //在終端上顯示目前資料傳輸狀態
 
     //連接資料庫
-    let db = new sqlite3.Database('./mike.db', function (err)
+    let db = new sqlite3.Database('./property_table.db', function (err)
     {
         if (err) {
             console.error(err.message)
         }
-        console.log("Connected to 'mike.db' database.")
+        console.log("Connected to 'property_table.db' database.")
     })
 
 
